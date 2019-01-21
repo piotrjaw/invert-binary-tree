@@ -1,0 +1,37 @@
+.node__value {
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 0 6px;
+}
+
+.node__branch-wrapper {
+  display: flex;
+}
+
+.node__left,
+.node__right {
+  position: relative;
+}
+
+.node__left::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 10px;
+  width: 50%;
+  top: -10px;
+  left: 50%;
+  background: linear-gradient(to top left, #fff calc(50% - 1px), #000, #fff calc(50% + 1px) );
+}
+
+.node__right::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 10px;
+  width: 50%;
+  top: -10px;
+  right: 50%;
+  background: linear-gradient(to top right, #fff calc(50% - 1px), #000, #fff calc(50% + 1px) );
+}
