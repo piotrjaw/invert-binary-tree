@@ -1,12 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 .node__value {
   display: inline-flex;
   flex-direction: column;
-  margin-top: 10px;
-  padding: 0 6px;
+  margin: 10px 6px 0;
+  width: 100%;
 }
 
 .node__branch-wrapper {
   display: flex;
+}
+
+.node__wrapper {
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: 0 auto;
+  max-width: 50%;
+  width: 100%;
 }
 
 .node__left,

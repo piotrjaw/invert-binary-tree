@@ -14,10 +14,15 @@ class App extends Component {
     const thisDepth = parentDepth + 1;
     return {
       value: Math.round(Math.random() * 10),
-      left: thisDepth === maxDepth ? null : this.createNode({ parentDepth: thisDepth, maxDepth }),
-      right: thisDepth === maxDepth ? null : this.createNode({ parentDepth: thisDepth, maxDepth }),
+      left: this.getChildNode({ thisDepth, maxDepth }),
+      right: this.getChildNode({ thisDepth, maxDepth }),
     };
   };
+
+  getChildNode = ({ thisDepth, maxDepth }) => thisDepth === maxDepth ||
+    Math.random() > 0.8
+      ? null
+      : this.createNode({ parentDepth: thisDepth, maxDepth });
 
   invert = (node) => {
     if (!node) return node;

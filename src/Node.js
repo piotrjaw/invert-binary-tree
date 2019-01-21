@@ -5,9 +5,9 @@ const Node = ({ className, node }) => (
   <div className="node__wrapper">
     {
       node
-        ? <div className={ `node__value ${className}` }>
+        ? <div className={ `node__value${className ? ` ${className}` : ''}` }>
           { node.value }
-          { node.left && node.right &&
+          { (node.left || node.right) &&
             <div className="node__branch-wrapper">
               <Node
                 className="node__left"
